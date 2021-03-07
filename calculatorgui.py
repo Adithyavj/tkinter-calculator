@@ -24,6 +24,15 @@ def btn_clear():
     input_text.set("")
 
 
+# 'bt_equal':This method calculates the expression
+# present in input field
+def btn_equal():
+    global expression
+    result = str(eval(expression))
+    input_text.set(result)
+    expression = ""
+
+
 expression = ""
 
 # 'StringVar()' :It is used to get the instance of input field
@@ -59,12 +68,15 @@ divide.grid(row=0, column=3, padx=1, pady=1)
 seven = Button(btns_frame, text="7", fg="black", width=10, height=3, bd=0, bg="#eee", cursor="hand2",
                command=lambda: btn_click("7"))
 seven.grid(row=1, column=0, padx=1, pady=1)
+
 eight = Button(btns_frame, text="8", fg="black", width=10, height=3, bd=0, bg="#eee", cursor="hand2",
                command=lambda: btn_click("8"))
 eight.grid(row=1, column=1, padx=1, pady=1)
+
 nine = Button(btns_frame, text="9", fg="black", width=10, height=3, bd=0, bg="#eee", cursor="hand2",
               command=lambda: btn_click("9"))
 nine.grid(row=1, column=2, padx=1, pady=1)
+
 multiply = Button(btns_frame, text="x", fg="black", width=10, height=3, bd=0, bg="#eee", cursor="hand2",
                   command=lambda: btn_click("*"))
 multiply.grid(row=1, column=3, padx=1, pady=1)
@@ -73,12 +85,15 @@ multiply.grid(row=1, column=3, padx=1, pady=1)
 four = Button(btns_frame, text="4", fg="black", width=10, height=3, bd=0, bg="#eee", cursor="hand2",
               command=lambda: btn_click("4"))
 four.grid(row=2, column=0, padx=1, pady=1)
+
 five = Button(btns_frame, text="5", fg="black", width=10, height=3, bd=0, bg="#eee", cursor="hand2",
               command=lambda: btn_click("5"))
 five.grid(row=2, column=1, padx=1, pady=1)
+
 six = Button(btns_frame, text="6", fg="black", width=10, height=3, bd=0, bg="#eee", cursor="hand2",
              command=lambda: btn_click("6"))
 six.grid(row=2, column=2, padx=1, pady=1)
+
 minus = Button(btns_frame, text="-", fg="black", width=10, height=3, bd=0, bg="#eee", cursor="hand2",
                command=lambda: btn_click("-"))
 minus.grid(row=2, column=3, padx=1, pady=1)
@@ -87,12 +102,15 @@ minus.grid(row=2, column=3, padx=1, pady=1)
 one = Button(btns_frame, text="1", fg="black", width=10, height=3, bd=0, bg="#eee", cursor="hand2",
              command=lambda: btn_click("1"))
 one.grid(row=3, column=0, padx=1, pady=1)
+
 two = Button(btns_frame, text="2", fg="black", width=10, height=3, bd=0, bg="#eee", cursor="hand2",
              command=lambda: btn_click("2"))
 two.grid(row=3, column=1, padx=1, pady=1)
+
 three = Button(btns_frame, text="3", fg="black", width=10, height=3, bd=0, bg="#eee", cursor="hand2",
                command=lambda: btn_click("3"))
 three.grid(row=3, column=2, padx=1, pady=1)
+
 plus = Button(btns_frame, text="+", fg="black", width=10, height=3, bd=0, bg="#eee", cursor="hand2",
               command=lambda: btn_click("+"))
 plus.grid(row=3, column=3, padx=1, pady=1)
@@ -101,11 +119,13 @@ plus.grid(row=3, column=3, padx=1, pady=1)
 zero = Button(btns_frame, text="0", fg="black", width=10, height=3, bd=0, bg="#eee", cursor="hand2",
               command=lambda: btn_click("0"))
 zero.grid(row=4, column=0, padx=1, pady=1)
+
 point = Button(btns_frame, text=".", fg="black", width=10, height=3, bd=0, bg="#eee", cursor="hand2",
                command=lambda: btn_click("."))
 point.grid(row=4, column=1, padx=1, pady=1)
+
 equals = Button(btns_frame, text="=", fg="black", width=21, height=3, bd=0, bg="#eee", cursor="hand2",
-                command=lambda: btn_click("="))
+                command=lambda: btn_equal())
 equals.grid(row=4, column=2, columnspan=2, padx=1, pady=1)
 
 win.mainloop()
